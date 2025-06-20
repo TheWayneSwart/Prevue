@@ -38,7 +38,7 @@ const recentActivities = ref([
 </script>
 
 <template>
-    <v-container fluid>
+    <v-container fluid class="pa-10">
         <!-- Dashboard Header -->
         <v-row>
             <v-col cols="12">
