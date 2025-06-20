@@ -12,6 +12,8 @@ Prevue is designed to serve as a comprehensive starting point for SaaS admin das
 - All dependencies must be explicitly imported where they are used.
 - All my examples use the Vuejs Composition API.
 
+![Prevue Screenshot](https://i.imgur.com/SmW1KqZ.jpeg)
+
 ## 🚀 Quick Start
 
 ### Prerequisites

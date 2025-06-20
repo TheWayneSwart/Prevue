@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, watch } from 'vue';
 import { useTheme } from 'vuetify';
 
 const drawer = ref(true);
@@ -9,132 +9,166 @@ const open = ref(null);
 const theme = useTheme();
 const isDark = ref(theme.global.current.value.dark);
 
-console.log(theme.global);
-
-const toggleTheme = () => {
-    isDark.value = !isDark.value;
-    theme.global.name.value = isDark.value ? 'prevueDark' : 'prevueLight';
-    localStorage.setItem('prevue-theme', isDark.value ? 'dark' : 'light');
-};
-
-// Load theme preference on app mount
 onMounted(() => {
+
+    // Set the theme from local storage
     const savedTheme = localStorage.getItem('prevue-theme');
     if (savedTheme) {
         isDark.value = savedTheme === 'dark';
         theme.global.name.value = isDark.value ? 'prevueDark' : 'prevueLight';
     }
+
 });
+
+const switchTheme = () => {
+    isDark.value = !isDark.value;
+    theme.global.name.value = isDark.value ? 'prevueDark' : 'prevueLight';
+    localStorage.setItem('prevue-theme', isDark.value ? 'dark' : 'light');
+};
 
 </script>
 
 <template><v-app id="inspire">
-        <v-navigation-drawer v-model="drawer" width="300">
+    <v-navigation-drawer v-model="drawer" width="300">
 
-            <v-card elevation="0">
-                <v-card-text class="pt-8">
-                    <p class="text-primary text-h4 font-weight-bold">
-                        <v-avatar size="80" class="mr-1" image="@/assets/logo/prevue_rocket.png"></v-avatar> Prevue
-                    </p>
-                </v-card-text>
-            </v-card>
+        <v-card elevation="0">
+            <v-card-text class="pt-8">
+                <p class="text-primary text-h4 font-weight-bold">
+                    <v-avatar size="80" class="mr-1" image="@/assets/logo/prevue_rocket.png"></v-avatar> Prevue
+                </p>
+            </v-card-text>
+        </v-card>
 
-            <v-divider class="mb-5"></v-divider>
+        <v-divider class="mb-5"></v-divider>
 
-            <v-list v-model:opened="open">
+        <v-list v-model:opened="open">
 
-                <v-list-item link to="/">
-                    <v-list-item-title>
-                        <v-icon class="me-3" color="primary">mdi-monitor-dashboard</v-icon> Dashboard
-                    </v-list-item-title>
+            <v-list-item link to="/">
+                <v-list-item-title>
+                    <v-icon class="me-3" color="primary">mdi-monitor-dashboard</v-icon> Dashboard
+                </v-list-item-title>
+            </v-list-item>
+
+            <v-list-group>
+                <template v-slot:activator="{ props }">
+                    <v-list-item v-bind="props">
+                        <v-list-item-title><v-icon class="me-3" color="primary">mdi-heart-pulse</v-icon>
+                            Caregivers</v-list-item-title>
+                    </v-list-item>
+                </template>
+                <v-list-item link>
+                    <v-list-item-title><v-icon class="me-3" color="primary">mdi-list-box</v-icon>
+                        List</v-list-item-title>
                 </v-list-item>
+            </v-list-group>
 
-                <v-list-group>
-                    <template v-slot:activator="{ props }">
-                        <v-list-item v-bind="props">
-                            <v-list-item-title><v-icon class="me-3" color="primary">mdi-heart-pulse</v-icon>
-                                Caregivers</v-list-item-title>
-                        </v-list-item>
-                    </template>
-                    <v-list-item link>
-                        <v-list-item-title><v-icon class="me-3" color="primary">mdi-list-box</v-icon>
-                            List</v-list-item-title>
+            <v-list-group>
+                <template v-slot:activator="{ props }">
+                    <v-list-item v-bind="props">
+                        <v-list-item-title><v-icon class="me-3" color="primary">mdi-account-group</v-icon>
+                            Clients</v-list-item-title>
                     </v-list-item>
-                </v-list-group>
+                </template>
+                <v-list-item link>
+                    <v-list-item-title><v-icon class="me-3" color="primary">mdi-plus</v-icon> Create
+                        Client</v-list-item-title>
+                </v-list-item>
+            </v-list-group>
 
-                <v-list-group>
-                    <template v-slot:activator="{ props }">
-                        <v-list-item v-bind="props">
-                            <v-list-item-title><v-icon class="me-3" color="primary">mdi-account-group</v-icon>
-                                Clients</v-list-item-title>
-                        </v-list-item>
-                    </template>
-                    <v-list-item link>
-                        <v-list-item-title><v-icon class="me-3" color="primary">mdi-plus</v-icon> Create
-                            Client</v-list-item-title>
-                    </v-list-item>
-                </v-list-group>
-
-                <v-list-group>
-                    <template v-slot:activator="{ props }">
-                        <v-list-item v-bind="props">
-                            <v-list-item-title><v-icon class="me-3" color="primary">mdi-school</v-icon>
-                                Courses</v-list-item-title>
-                        </v-list-item>
-                    </template>
-                    <v-list-item link>
-                        <v-list-item-title><v-icon class="me-3" color="primary">mdi-list-box</v-icon> My
+            <v-list-group>
+                <template v-slot:activator="{ props }">
+                    <v-list-item v-bind="props">
+                        <v-list-item-title><v-icon class="me-3" color="primary">mdi-school</v-icon>
                             Courses</v-list-item-title>
                     </v-list-item>
-                </v-list-group>
+                </template>
+                <v-list-item link>
+                    <v-list-item-title><v-icon class="me-3" color="primary">mdi-list-box</v-icon> My
+                        Courses</v-list-item-title>
+                </v-list-item>
+            </v-list-group>
 
-                <v-list-group>
-                    <template v-slot:activator="{ props }">
-                        <v-list-item v-bind="props">
-                            <v-list-item-title><v-icon class="me-3" color="primary">mdi-account-school</v-icon>
-                                Students</v-list-item-title>
-                        </v-list-item>
-                    </template>
-                    <v-list-item link>
-                        <v-list-item-title><v-icon class="me-3" color="primary">mdi-plus</v-icon> Create
-                            Student</v-list-item-title>
+            <v-list-group>
+                <template v-slot:activator="{ props }">
+                    <v-list-item v-bind="props">
+                        <v-list-item-title><v-icon class="me-3" color="primary">mdi-account-school</v-icon>
+                            Students</v-list-item-title>
                     </v-list-item>
-                </v-list-group>
+                </template>
+                <v-list-item link>
+                    <v-list-item-title><v-icon class="me-3" color="primary">mdi-plus</v-icon> Create
+                        Student</v-list-item-title>
+                </v-list-item>
+            </v-list-group>
 
-            </v-list>
+        </v-list>
 
-        </v-navigation-drawer>
+    </v-navigation-drawer>
 
-        <v-app-bar elevation="1">
-            <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+    <v-app-bar elevation="1">
+        <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
-            <!-- <v-app-bar-title class="text-primary font-weight-bold">Hero Hub</v-app-bar-title> -->
+        <!-- <v-app-bar-title class="text-primary font-weight-bold">Hero Hub</v-app-bar-title> -->
 
-            <template v-slot:append>
-                <v-btn icon @click="toggleTheme" class="mr-2" :color="isDark ? 'secondary' : 'primary'">
-                    <v-icon>{{ isDark ? 'mdi-weather-sunny' : 'mdi-weather-night' }}</v-icon>
-                </v-btn>
-                <v-btn class="mr-2" prepend-icon="mdi-account"><span class="d-none d-sm-block">John Doe</span></v-btn>
-            </template>
+        <template v-slot:append>
+            
+            <v-btn class="mr-2" prepend-icon="mdi-cog">
+                <v-menu activator="parent" :close-on-content-click="false" class="pb-5">
+                    <v-card class="mt-2 border border-secondary" width="400" rounded="lg">
+                        <v-card-text class="pa-6 mt-5">
 
-        </v-app-bar>
+                            <v-row>
+                                <v-col cols="auto">
+                                    <v-avatar size="70" class="mr-1"
+                                        image="https://www.gravatar.com/avatar/297fe1c3f43c41b5dbdbb61d69e9aa54?s=380&d=wavatar"></v-avatar>
+                                </v-col>
+                                <v-col cols="auto">
+                                    <p class="font-weight-bold text-h5">John Doe</p>
+                                    <p class="font-weight-bold">Administrator</p>
+                                    <p>john@janesbakery.com</p>
+                                </v-col>
+                            </v-row>
 
-        <v-main>
-            <router-view />
-        </v-main>
+                            <v-divider class="mt-6 mb-2"></v-divider>
 
-        <v-footer class="text-center flex flex-column" style="max-height: 70px;">
-            <div class="d-flex">
-                <v-btn icon="mdi-facebook" color="secondary" density="comfortable" variant="text"></v-btn>
-                <v-btn icon="mdi-twitter" color="secondary" density="comfortable" variant="text"></v-btn>
-                <v-btn icon="mdi-linkedin" color="secondary" density="comfortable" variant="text"></v-btn>
-                <v-btn icon="mdi-instagram" color="secondary" density="comfortable" variant="text"></v-btn>
-            </div>
+                            <v-row no-gutters>
+                                <v-col>
+                                    <v-switch label="Dark Mode" color="primary" @click="switchTheme" v-model="isDark"></v-switch>
+                                </v-col>
+                            </v-row>
 
-            <div class="text-caption font-weight-regular">
-                <a href="#"> &copy; 202x Prevue. All rights reserved.</a>
-            </div>
-        </v-footer>
+                            <v-row no-gutters>
+                                <v-col>
+                                    <v-btn color="primary" class="rounded-xl" elevation="1" block>Logout</v-btn>
+                                </v-col>
+                            </v-row>
 
 
-    </v-app></template>
+                        </v-card-text>
+                    </v-card>
+                </v-menu>
+
+            </v-btn>
+        </template>
+
+    </v-app-bar>
+
+    <v-main>
+        <router-view />
+    </v-main>
+
+    <v-footer class="text-center flex flex-column" style="max-height: 70px;">
+        <div class="d-flex">
+            <v-btn icon="mdi-facebook" color="secondary" density="comfortable" variant="text"></v-btn>
+            <v-btn icon="mdi-twitter" color="secondary" density="comfortable" variant="text"></v-btn>
+            <v-btn icon="mdi-linkedin" color="secondary" density="comfortable" variant="text"></v-btn>
+            <v-btn icon="mdi-instagram" color="secondary" density="comfortable" variant="text"></v-btn>
+        </div>
+
+        <div class="text-caption font-weight-regular">
+            <a href="#"> &copy; 202x Prevue. All rights reserved.</a>
+        </div>
+    </v-footer>
+
+
+</v-app></template>

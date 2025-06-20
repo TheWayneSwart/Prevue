@@ -38,7 +38,7 @@ const props = defineProps({
 </script>
 
 <template>
-    <v-card class="dashboard-card" :elevation="elevation" rounded="lg">
+    <v-card class="dashboard-card" :elevation="elevation" rounded="xl">
         <v-card-text class="pa-6">
             <div class="d-flex align-center justify-space-between mb-4">
                 <div>

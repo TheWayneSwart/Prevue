@@ -62,7 +62,7 @@ const recentActivities = ref([
         <!-- Additional Dashboard Content -->
         <v-row class="mt-6">
             <v-col cols="12" md="8">
-                <v-card elevation="3" rounded="lg">
+                <v-card elevation="3" rounded="xl" height="350">
                     <v-card-title class="text-h5 font-weight-bold pa-6 pb-4">
                         <v-icon class="me-3" color="primary">mdi-chart-line</v-icon>
                         Enrollment Trends
@@ -77,7 +77,7 @@ const recentActivities = ref([
             </v-col>
 
             <v-col cols="12" md="4">
-                <v-card elevation="3" rounded="lg">
+                <v-card elevation="3" rounded="xl" height="350">
                     <v-card-title class="text-h5 font-weight-bold pa-6 pb-4">
                         <v-icon class="me-3" color="primary">mdi-clock-outline</v-icon>
                         Recent Activity
