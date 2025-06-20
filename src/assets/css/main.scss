@@ -1,0 +1,17 @@
+@use 'vuetify/settings' with (
+  $color-pack: false
+);
+
+* {    
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.main-container {   
+    display: flex;
+    height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: #93b2e9;
+}
