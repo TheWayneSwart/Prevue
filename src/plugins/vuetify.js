@@ -13,6 +13,16 @@ const prevueDark = {
     },
 }
 
+const prevueLight = {
+    dark: false,
+    colors: {
+        primary: '#1976d2',
+        secondary: '#424242',
+        light: '#AAAAAA',
+        success: '#4caf50',
+    },
+}
+
 export default createVuetify({
     theme: {
         defaultTheme: 'prevueDark',
@@ -21,6 +31,7 @@ export default createVuetify({
         },
         themes: {
             prevueDark,
+            prevueLight,
         },
     },
 })

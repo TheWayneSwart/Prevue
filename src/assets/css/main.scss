@@ -6,9 +6,38 @@
     font-family: 'Poppins', sans-serif !important;
 }
 
-.main-container {   
+// Ensure the app takes full height
+#inspire {
+    min-height: 100vh;
     display: flex;
-    height: 100vh;
+    flex-direction: column;
+}
+
+// Handle mobile viewport height changes
+@media screen and (max-width: 768px) {
+    #inspire {
+        min-height: 100dvh; // Use dynamic viewport height on mobile
+    }
+}
+
+// Main container that grows to fill available space
+.main-container {   
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0; // Important for flex child
+}
+
+// Ensure v-main takes full available height
+.v-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+// Footer will automatically stick to bottom
+.v-footer {
+    flex-shrink: 0;
 }
 
 a {

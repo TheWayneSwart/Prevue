@@ -1,15 +1,16 @@
 # Prevue - Vue.js and Vuetify.js SaaS Boilerplate
 
-A boilerplate template for building Software as a Service (SaaS) applications with Vue.js and Vuetify.
+A boilerplate template for building Software as a Service (SaaS) dashboard applications with Vue.js and Vuetify.
 
 ## 🎯 Overview
 
-Prevue is designed to serve as a comprehensive starting point for SaaS projects, covering most of the basic aspects and components needed to kickstart a new application. Built with modern web technologies and best practices, it provides a solid foundation for rapid development.
+Prevue is designed to serve as a comprehensive starting point for SaaS admin dashboard projects, covering most of the basic aspects and components needed to kickstart a new application. Built with modern web technologies and best practices, it provides a solid foundation for rapid development.
 
 ### A Few Things to Note:
 - Prevue uses JavaScript instead of TypeScript.
 - It requires manual imports of components, views, and composables (no auto-imports).
 - All dependencies must be explicitly imported where they are used.
+- All my examples use the Vuejs Composition API.
 
 ## 🚀 Quick Start
 
