@@ -6,6 +6,11 @@ A boilerplate template for building Software as a Service (SaaS) applications wi
 
 Prevue is designed to serve as a comprehensive starting point for SaaS projects, covering most of the basic aspects and components needed to kickstart a new application. Built with modern web technologies and best practices, it provides a solid foundation for rapid development.
 
+### A Few Things to Note:
+- Prevue uses JavaScript instead of TypeScript.
+- It requires manual imports of components, views, and composables (no auto-imports).
+- All dependencies must be explicitly imported where they are used.
+
 ## 🚀 Quick Start
 
 ### Prerequisites

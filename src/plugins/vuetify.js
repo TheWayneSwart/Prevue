@@ -1,17 +1,9 @@
-/**
- * plugins/vuetify.js
- *
- * Framework documentation: https://vuetifyjs.com`
- */
-
 // Styles
 import '@mdi/font/css/materialdesignicons.css'
 import 'vuetify/styles'
-
-// Composables
 import { createVuetify } from 'vuetify'
 
-const tunityDarkTheme = {
+const prevueDark = {
     dark: true,
     colors: {
         primary: '#93b2e9',
@@ -21,15 +13,14 @@ const tunityDarkTheme = {
     },
 }
 
-// https://vuetifyjs.com/en/introduction/why-vuetify/#feature-guides
 export default createVuetify({
     theme: {
-        defaultTheme: 'tunityDarkTheme',
+        defaultTheme: 'prevueDark',
         font: {
             family: 'Poppins',
         },
         themes: {
-            tunityDarkTheme,
+            prevueDark,
         },
     },
 })
