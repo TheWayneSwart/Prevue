@@ -52,15 +52,21 @@ const switchTheme = () => {
             <v-list-group>
                 <template v-slot:activator="{ props }">
                     <v-list-item v-bind="props">
-                        <v-list-item-title><v-icon class="me-3" color="primary">mdi-heart-pulse</v-icon>
-                            Caregivers</v-list-item-title>
+                        <v-list-item-title><v-icon class="me-3" color="primary">mdi-shield-account</v-icon>
+                            Administration</v-list-item-title>
                     </v-list-item>
                 </template>
                 <v-list-item link>
-                    <v-list-item-title><v-icon class="me-3" color="primary">mdi-list-box</v-icon>
-                        List</v-list-item-title>
+                    <v-list-item-title><v-icon class="me-3" color="primary">mdi-cog</v-icon>
+                        System</v-list-item-title>
+                </v-list-item>
+                <v-list-item link>
+                    <v-list-item-title><v-icon class="me-3" color="primary">mdi-account-group</v-icon>
+                        Users</v-list-item-title>
                 </v-list-item>
             </v-list-group>
+
+            <v-divider class="my-5"></v-divider>            
 
             <v-list-group>
                 <template v-slot:activator="{ props }">
@@ -70,7 +76,7 @@ const switchTheme = () => {
                     </v-list-item>
                 </template>
                 <v-list-item link>
-                    <v-list-item-title><v-icon class="me-3" color="primary">mdi-plus</v-icon> Create
+                    <v-list-item-title><v-icon class="me-3" color="success">mdi-plus</v-icon> Create
                         Client</v-list-item-title>
                 </v-list-item>
             </v-list-group>
@@ -83,8 +89,7 @@ const switchTheme = () => {
                     </v-list-item>
                 </template>
                 <v-list-item link>
-                    <v-list-item-title><v-icon class="me-3" color="primary">mdi-list-box</v-icon> My
-                        Courses</v-list-item-title>
+                    <v-list-item-title><v-icon class="me-3" color="success">mdi-plus</v-icon>Create Course</v-list-item-title>
                 </v-list-item>
             </v-list-group>
 
@@ -96,7 +101,7 @@ const switchTheme = () => {
                     </v-list-item>
                 </template>
                 <v-list-item link>
-                    <v-list-item-title><v-icon class="me-3" color="primary">mdi-plus</v-icon> Create
+                    <v-list-item-title><v-icon class="me-3" color="success">mdi-plus</v-icon> Create
                         Student</v-list-item-title>
                 </v-list-item>
             </v-list-group>
@@ -166,7 +171,7 @@ const switchTheme = () => {
         </div>
 
         <div class="text-caption font-weight-regular">
-            <a href="#"> &copy; 202x Prevue. All rights reserved.</a>
+            <a href="https://github.com/TheWayneSwart/Prevue" target="_blank"> &copy; 1979 Prevue. All rights reserved.</a>
         </div>
     </v-footer>
 

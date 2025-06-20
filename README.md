@@ -8,6 +8,10 @@ Prevue is designed to serve as a comprehensive starting point for SaaS admin das
 
 ![Prevue Screenshot](https://i.imgur.com/XZW6Klt.jpeg)
 
+## 🚩Some Features
+- Desktop widget components.
+- Light and Dark mode.
+
 ### A Few Things to Note:
 - Prevue uses JavaScript instead of TypeScript.
 - It requires manual imports of components, views, and composables (no auto-imports).
