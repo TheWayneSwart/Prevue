@@ -6,7 +6,7 @@ A boilerplate template for building Software as a Service (SaaS) dashboard appli
 
 Prevue is designed to serve as a comprehensive starting point for SaaS admin dashboard projects, covering most of the basic aspects and components needed to kickstart a new application. Built with modern web technologies and best practices, it provides a solid foundation for rapid development.
 
-![Prevue Screenshot](https://i.imgur.com/SmW1KqZ.jpeg)
+![Prevue Screenshot](https://i.imgur.com/XZW6Klt.jpeg)
 
 ### A Few Things to Note:
 - Prevue uses JavaScript instead of TypeScript.
