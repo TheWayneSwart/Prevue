@@ -7,7 +7,8 @@
 // Composables
 import { createRouter, createWebHistory } from 'vue-router'
 
-import DashboardView from '@/views/Dashbord.vue'
+import DashboardView from '@/views/Dashboard.vue'
+import LoginView from '@/views/Login.vue'
 
 const routes = [
     {
@@ -15,6 +16,11 @@ const routes = [
         name: 'dashboard',
         component: DashboardView
     },
+    {
+        path: '/login',
+        name: 'login',
+        component: LoginView
+    }
 ]
 
 const router = createRouter({

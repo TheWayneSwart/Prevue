@@ -106,6 +106,11 @@ const switchTheme = () => {
                 </v-list-item>
             </v-list-group>
 
+            <v-divider class="my-5"></v-divider>
+            <v-list-item link to="/login">
+                <v-list-item-title><v-icon class="me-3" color="primary">mdi-login</v-icon> Login</v-list-item-title>
+            </v-list-item>
+
         </v-list>
 
     </v-navigation-drawer>
