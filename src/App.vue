@@ -23,7 +23,7 @@ onMounted(() => {
 const switchTheme = () => {
     isDark.value = !isDark.value;
     theme.global.name.value = isDark.value ? 'prevueDark' : 'prevueLight';
-    localStorage.setItem('prevue-theme', isDark.value ? 'dark' : 'light');
+    localStorage.setItem('prevue-theme', isDark.value ? 'dark' : 'light');    
 };
 
 </script>
@@ -162,12 +162,12 @@ const switchTheme = () => {
         <router-view />
     </v-main>
 
-    <v-footer class="text-center flex flex-column" style="max-height: 70px;">
+    <v-footer class="text-center flex flex-column pt-2" style="max-height: 70px;">
         <div class="d-flex">
-            <v-btn icon="mdi-facebook" color="secondary" density="comfortable" variant="text"></v-btn>
-            <v-btn icon="mdi-twitter" color="secondary" density="comfortable" variant="text"></v-btn>
-            <v-btn icon="mdi-linkedin" color="secondary" density="comfortable" variant="text"></v-btn>
-            <v-btn icon="mdi-instagram" color="secondary" density="comfortable" variant="text"></v-btn>
+            <v-btn icon="mdi-facebook" color="secondary" density="comfortable" variant="text" class="mr-2"></v-btn>
+            <v-btn icon="mdi-twitter" color="secondary" density="comfortable" variant="text" class="mr-2"></v-btn>
+            <v-btn icon="mdi-linkedin" color="secondary" density="comfortable" variant="text" class="mr-2"></v-btn>
+            <v-btn icon="mdi-instagram" color="secondary" density="comfortable" variant="text" class="mr-2"></v-btn>
         </div>
 
         <div class="text-caption font-weight-regular">
