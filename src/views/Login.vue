@@ -32,8 +32,10 @@ const handleLogin = async () => {
         <div class="text-center mb-6">
             <v-img src="@/assets/logo/prevue_rocket.png" width="100" height="100" class="mb-4 mx-auto" />
             <h1 class="text-h4 font-weight-bold text-primary">Welcome to Prevue</h1>
-            <p class="text-body-2 text-medium-emphasis mt-2">Sign in to your account</p>
+            <p class="mt-2">Sign in to your account</p>
         </div>
+
+        <v-divider class="mb-10"></v-divider>
 
         <v-form @submit.prevent="handleLogin">
             <v-text-field v-model="email" label="Email" type="email" prepend-inner-icon="mdi-email" variant="outlined"
@@ -44,15 +46,11 @@ const handleLogin = async () => {
                 @click:append-inner="showPassword = !showPassword" variant="outlined" :rules="rules.password" required
                 class="mb-6" />
 
-            <v-btn type="submit" color="primary" size="large" block :loading="loading" :disabled="!email || !password"
+            <v-btn type="submit" color="primary" rounded="xl" size="large" block :loading="loading" :disabled="!email || !password"
                 class="mb-4">
                 Sign In
             </v-btn>
 
-            <div class="text-center">
-                <v-btn variant="text" color="primary" size="small" class="text-caption">
-                </v-btn>
-            </div>
         </v-form>
     </v-card>
 </v-container></template>
